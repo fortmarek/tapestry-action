@@ -7,9 +7,10 @@ try {
     execSync('mint install fortmarek/tapestry@feature/github_release --force');
     const tag = execSync('git describe --tags').toString();
     execSync(`git tag -d ${tag}`);
-    execSync(`tapestry action docs-update ${tag}`);
+    execSync('git config --global user.email "github-actions[bot]@users.noreply.github.com');
+    execSync('git config --global user.name "github-actions[bot]');
     execSync(
-        `TAPESTRY_ACCESS_TOKEN=${github.payload.repository.owner}:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN} tapestry release ${tag}`,
+        `TAPESTRY_ACCESS_TOKEN=${process.env.GITHUB_ACTOR}:${process.env.GITHUB_TOKEN} tapestry release ${tag}`,
         {stdio: 'inherit'}
     );
   } catch (error) {
