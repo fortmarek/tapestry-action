@@ -7,6 +7,7 @@ try {
     const tag = execSync('git describe --tags').toString();
     execSync(`git tag -d ${tag}`);
     execSync(`tapestry action docs-update ${tag}`);
+    console.log('Running tapestry release');
     execSync(
         `TAPESTRY_ACCESS_TOKEN=${process.env.GITHUB_PERSONAL_ACCESS_TOKEN} tapestry release 0.0.70`,
         {stdio: 'inherit'}
