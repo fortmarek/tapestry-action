@@ -1,0 +1,5 @@
+name: 'Tapestry action'
+description: 'Run tapestry as defined in TapestryConfig.swift'
+runs:
+  using: 'node12'
+  main: 'index.js'
