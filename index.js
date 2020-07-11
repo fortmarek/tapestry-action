@@ -9,7 +9,7 @@ try {
     execSync(`git tag -d ${tag}`);
     execSync(`tapestry action docs-update ${tag}`);
     execSync(
-        `TAPESTRY_ACCESS_TOKEN=${github.actor}:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN} tapestry release ${tag}`,
+        `TAPESTRY_ACCESS_TOKEN=${process.env.GITHUB_ACTOR}:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN} tapestry release ${tag}`,
         {stdio: 'inherit'}
     );
   } catch (error) {
