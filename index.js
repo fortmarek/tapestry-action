@@ -9,7 +9,7 @@ try {
     execSync(`git push --delete origin ${tag}`)
     execSync(`git tag -d ${tag}`);
     execSync(
-        `TAPESTRY_ACCESS_TOKEN=${process.env.GITHUB_TOKEN} tapestry release ${tag}`,
+        `TAPESTRY_ACCESS_TOKEN=${process.env.GITHUB_ACTOR}:${process.env.GITHUB_TOKEN} tapestry release ${tag}`,
         {stdio: 'inherit'}
     );
   } catch (error) {
