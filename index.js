@@ -10,6 +10,10 @@ try {
     execSync(`git tag -d ${tag}`);
     execSync(`git tag ${tag}`);
     execSync(`git push --tags`);
+    execSync('touch hello');
+    execSync('git add hello');
+    execSync('git commit -m "Try commit"');
+    execSync('git push');
     // execSync(
     //     `TAPESTRY_ACCESS_TOKEN=${process.env.GITHUB_ACTOR}:${process.env.GITHUB_TOKEN} tapestry release ${tag}`,
     //     {stdio: 'inherit'}
