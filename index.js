@@ -5,7 +5,7 @@ const github = require('@actions/github');
 try {
   execSync(`curl --request POST \
         --url https://api.github.com/repos/tapestry/issues \
-        --header 'authorization: Bearer ${{ process.env.GITHUB_TOKEN }}' \
+        --header 'authorization: Bearer ${process.env.GITHUB_TOKEN}' \
         --header 'content-type: application/json' \
         --data '{
           "title": "Test issue",
