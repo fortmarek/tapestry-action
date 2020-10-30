@@ -4,7 +4,7 @@ const github = require('@actions/github');
 
 try {
     execSync('brew install mint');
-    execSync('mint install fortmarek/tapestry@master --force');
+    execSync('mint install AckeeCZ/tapestry@master --force');
     execSync('git config --local user.email "action@github.com"');
     execSync('git config --local user.name "GitHub Action"');
     const tag = execSync('git describe --tags --abbrev=0').toString();
