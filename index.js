@@ -3,7 +3,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-    execSync('brew install mint');
+    execSync('brew install mint@0.13.0');
     execSync('mint install AckeeCZ/tapestry');
     execSync('git config --local user.email "action@github.com"');
     execSync('git config --local user.name "GitHub Action"');
