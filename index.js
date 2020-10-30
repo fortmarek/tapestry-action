@@ -1,6 +1,5 @@
 const { execSync, exec } = require("child_process");
 const core = require('@actions/core');
-const github = require('@actions/github');
 
 try {
     execSync('brew install mint');
