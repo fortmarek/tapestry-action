@@ -5,10 +5,8 @@ const { release } = require("os");
 try {
     execSync('brew install mint');
     execSync('mint install AckeeCZ/tapestry');
-    if (!process.env.RELEASE_ACTOR) {
-      execSync('git config --local user.email "action@github.com"');
-      execSync('git config --local user.name "GitHub Action"');
-    }
+    execSync('git config --local user.email "action@github.com"');
+    execSync('git config --local user.name "GitHub Action"');
     const tag = execSync('git describe --tags --abbrev=0').toString();
     execSync(`git push --delete origin ${tag}`)
     execSync(`git tag -d ${tag}`);
